@@ -4,9 +4,7 @@
 
 If you already have this install and are on El Capitan or plan to update to El Capitan run this to remove the old version:
 
-sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
-sudo rm /Library/Scripts/NetBasics/wireless.sh
-sudo rm /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
+sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist; sudo rm /Library/Scripts/NetBasics/wireless.sh; sudo rm /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
 
 ------------------------------------------------------------------------------------
 
