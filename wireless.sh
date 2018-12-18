@@ -41,7 +41,7 @@ elif [ "$OSVERSION" == "10" ]; then
   fi
 
 # For OSX 10.7 (#11) Lion and OSX 10.8 (#12) Mountain Lion and 10.9 (#13) Mavericks, Yosemite (#14), El Capitan (#15), Serria (#16), High Serria (#17)
-elif [ "$OSVERSION" == "11" -o "$OSVERSION" == "12" -o "$OSVERSION" == "13" -o "$OSVERSION" == "14" -o "$OSVERSION" == "15" -o "$OSVERSION" == "16" -o "$OSVERSION" == "17" ]; then
+elif [ "$OSVERSION" -ge "11" ]; then
   if [ $IPFOUND ]; then
     /usr/sbin/networksetup -setairportpower $WIFIINTERFACES off || exit 1
     echo "Turning OFF wireless on card $WIFIINTERFACES."
