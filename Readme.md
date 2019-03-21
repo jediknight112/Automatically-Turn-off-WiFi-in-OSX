@@ -8,14 +8,6 @@ This is a service that you can implement on your Mac that will automatically tur
 
 ------------------------------------------------------------------------------------
 
-If you already have this installed run this to remove the old version:
-
-```
-sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist; sudo rm /Library/Scripts/NetBasics/wireless.sh; sudo rm /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
-```
-
-------------------------------------------------------------------------------------
-
 ### How to install
 
 1. Copy the 2 files "wireless.sh" and "com.computernetworkbasics.wifionoff.plist" to your Desktop.
@@ -52,8 +44,14 @@ sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifion
 
 ------------------------------------------------------------------------------------
 
-Alternatively you can run this one liner and it does all of the things a once after you copy the files to your desktop:
+###### Alternatively you can run this one liner and it does all of the things a once after you copy the files to your desktop:
 
 ```
 sudo mkdir -p /Library/Scripts/NetBasics/ && sudo mv ~/Desktop/wireless.sh /Library/Scripts/NetBasics/ && sudo chmod 755 /Library/Scripts/NetBasics/wireless.sh && sudo mkdir -p /Library/LaunchDaemons/ && sudo mv ~/Desktop/com.computernetworkbasics.wifionoff.plist /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist && sudo chown root:wheel /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist && sudo launchctl load -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
+```
+
+###### If you already have this installed run this to remove the old version:
+
+```
+sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist; sudo rm /Library/Scripts/NetBasics/wireless.sh; sudo rm /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
 ```
