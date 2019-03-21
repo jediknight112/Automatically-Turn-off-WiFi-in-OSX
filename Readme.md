@@ -2,6 +2,8 @@
 
 This is a service that you can implement on your Mac that will automatically turn off the WiFi when a LAN connection is present and has an IP address that is not locally assigned.
 
+------------------------------------------------------------------------------------
+
 ### Compatibility
 
 **This version is compatible with Mac OSX, even the most recent versions**
