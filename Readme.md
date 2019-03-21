@@ -1,0 +1,51 @@
+# Automatically-Turn-off-WiFi-in-OSX
+
+This is a service that you can implement on your Mac that will automatically turn off the WiFi when a LAN connection is present and has an IP address that is not locally assigned.
+
+
+
+# usage
+
+**This version is compatible with Mac OSX, even the most recent versions**
+
+------------------------------------------------------------------------------------
+
+If you already have this install and are on El Capitan or plan to update to El Capitan run this to remove the old version:
+
+sudo launchctl unload -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist; sudo rm /Library/Scripts/NetBasics/wireless.sh; sudo rm /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
+
+------------------------------------------------------------------------------------
+
+### How to install
+
+1. Copy the 2 files "wireless.sh" and "com.computernetworkbasics.wifionoff.plist" to your Desktop.
+
+** If you don't want to do steps 2-8 line by line skip to the bottom and run the one liner, it will do all the things for you. **
+
+2. Make the directory of "NetBasics/" using this in shell:
+        `sudo mkdir -p /Library/Scripts/NetBasics/`
+
+3. Move the "wireless.sh" file into that directory with this:
+        `sudo mv ~/Desktop/wireless.sh /Library/Scripts/NetBasics/`
+
+4. Make sure the file permissions are correct with this:
+        `sudo chmod 755 /Library/Scripts/NetBasics/wireless.sh`
+
+5. Make the directory of "LaunchDaemons/" with this:
+        `sudo mkdir -p /Library/LaunchDaemons/`
+
+6. Move the "com.computernetworkbasics.wifionoff.plist" file into that directory with this:
+        `sudo mv ~/Desktop/com.computernetworkbasics.wifionoff.plist /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist`
+
+7. This file needs to be owned by the user "root" and in the group "wheel" for it to work, run this to do so:
+        `sudo chown root:wheel /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist`
+
+8. You can either reboot your computer or run this to load the .plist:
+        `sudo launchctl load -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist`
+
+
+Alternatively you can run this one liner and it does all of the things a once after you copy the files to your desktop:
+
+```
+sudo mkdir -p /Library/Scripts/NetBasics/ && sudo mv ~/Desktop/wireless.sh /Library/Scripts/NetBasics/ && sudo chmod 755 /Library/Scripts/NetBasics/wireless.sh && sudo mkdir -p /Library/LaunchDaemons/ && sudo mv ~/Desktop/com.computernetworkbasics.wifionoff.plist /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist && sudo chown root:wheel /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist && sudo launchctl load -w /Library/LaunchDaemons/com.computernetworkbasics.wifionoff.plist
+```

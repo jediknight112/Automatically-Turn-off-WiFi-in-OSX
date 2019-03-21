@@ -1,4 +1,4 @@
-**This version is compatible with Mac OSX, even the most recent version "El Capitan"**
+**This version is compatible with Mac OSX, even the most recent versions**
 
 ------------------------------------------------------------------------------------
 
